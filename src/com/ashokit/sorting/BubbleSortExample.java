@@ -11,7 +11,7 @@ public class BubbleSortExample {
 		// TODO Auto-generated method stub
 		
 		//31,5,7,45,60,4  sort using bubble sort
-		int[] a = {31,5,7,45,60,4};
+		int[] a = {31,5,7,45,60,4,7};
 		BubbleSortExample b= new BubbleSortExample();
 		b.BubbleSort(a);
 		
@@ -59,6 +59,7 @@ public class BubbleSortExample {
 	
 	public void Display()
 	{
+		//0(1) constant
 		LocalDateTime d= LocalDateTime.now();
 	  for (int i = 0; i < 100000; i++) {
 		  
