@@ -1,10 +1,12 @@
 package com.ashokit.java8fetures.collectionenhancement;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import java.util.Set;
 import java.util.stream.Collector;
 import java.util.stream.Collectors;
@@ -121,6 +123,7 @@ public class StreamExample {
 		
 		
 		
+		
 		Set<Integer> m1= l1.stream().filter((t) -> (t%2==0)).collect(Collectors.toSet());
 		
 		System.out.println(m1);
@@ -168,7 +171,7 @@ public class StreamExample {
 		l2.add(30);
 		
 		
-		System.out.println("Sorted list in asendinf order"+l2.stream().sorted().collect(Collectors.toList()));;
+		System.out.println("Sorted list in asending order"+l2.stream().sorted().collect(Collectors.toList()));;
 		
 		
 		//write a program in desending  order
@@ -231,11 +234,13 @@ public class StreamExample {
 		
 		System.out.println("duplicate total count "+duplicate);
 		
-		
+//		/How to count each element/word from the String ArrayList in Java8?
 		// Count occurrences of each element
 		Map<Integer, Long> countMap = l3.stream()
 		    .collect(Collectors.groupingBy(e -> e, Collectors.counting()));
 
+		System.out.println(" elements and their counts: " + countMap);
+		
 		// Filter and display duplicates with their counts
 		Map<Integer, Long> duplicates = countMap.entrySet().stream()
 		    .filter(entry -> entry.getValue() > 1)
@@ -243,6 +248,54 @@ public class StreamExample {
 
 		System.out.println("Duplicate elements and their counts: " + duplicates);
 		
+		
+		//Given a String, find the  repeated character in it using Stream functions?
+		
+		String input6 = "vilas savaji jadhav";
+		
+		Map<Character, Long> countMap1 =  input6.chars().mapToObj(s -> Character.toLowerCase(Character.valueOf((char) s)))
+		  .collect(Collectors.groupingBy(e -> e, Collectors.counting()));
+		
+		Map<Character, Long> duplicates1 = countMap1.entrySet().stream()
+			    .filter(entry -> entry.getValue() > 1)
+			    .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue));
+		
+		System.out.println("repeated character in it using Stream function counts: " + duplicates1);
+		
+		
+		
+		//Given a String, find the  repeated character in it using Stream functions?
+		
+		Map<Character, Long> countMap2 =  input6.chars().mapToObj(s -> Character.toLowerCase(Character.valueOf((char) s)))
+				  .collect(Collectors.groupingBy(e -> e, Collectors.counting()));
+				
+		 Optional<Character>  duplicates2 = countMap2.entrySet().stream()
+					    .filter(entry -> entry.getValue() > 1)
+					    .skip(1)
+					    .map(Map.Entry::getKey)
+					    .findFirst();
+					    ;
+		 
+				
+				System.out.println("repeated first character in it using Stream function counts: " + duplicates2);
+		
+		//Count the number of elements in a list that are greater than 50.
+				
+				
+		
+		List<Integer> l4= new ArrayList<>();
+		l4.add(50);
+		l4.add(70);
+		l4.add(50);
+		l4.add(90);
+		l4.add(30);
+		l4.add(90);
+		l4.add(90);
+		l4.add(50);
+
+		long count3=l3.stream().filter(t -> t>50).count();
+		
+		System.out.println("ount the number of elements in a list that are greater than 50"+count3);
 		
 		//convert employee list in HashMapp<empid,employee>
 		
@@ -291,6 +344,100 @@ public class StreamExample {
 		 
 		 System.out.println("employee name start with k A "+empname2);
 		
+		 
+		 //Calculate the sum of elements in a list of integers.
+		 
+		 List<Integer> l5= new ArrayList<>();
+			l5.add(50);
+			l5.add(70);
+			l5.add(50);
+			l5.add(90);
+			l5.add(30);
+			l5.add(90);
+			l5.add(90);
+			l5.add(50);
+			
+			int sum = l5.stream().mapToInt(Integer::intValue).sum();
+
+	        System.out.println("Sum of elements in the list: " + sum);
+	        
+	        //Convert all strings in a list to uppercase.
+	        List<String> names = Arrays.asList("Alice", "Bob", "Charlie");
+	        
+	        List<String> upperNames = names.stream().map(String::toUpperCase).collect(Collectors.toList());	
+	        
+	        System.out.println("Convert all strings in a list to uppercase: " + upperNames);
+	        
+	        //Problem: Reduce a list of integers to their sum.
+	        List<Integer> numbers = Arrays.asList(1, 2, 3, 4, 5, 6);
+	        int total = numbers.stream()
+	        		.reduce(0, Integer::sum);
+	        
+	        System.out.println("Reduce a list of integers to their sum."+total);
+	        
+	        //Problem: Return any element from a list of integers.
+	          
+	        Optional<Integer> anyElement = numbers.stream().findAny();
+	        
+	        System.out.println("Return any element from a list of integers"+anyElement.get());
+	        
+	        //Problem: Extract first names from a list of full names.
+	        
+	        List<String> fullNames = Arrays.asList("Alice Johnson", "Bob Harris",
+	        		"Charlie Lou");
+	        		List<String> firstNames = fullNames.stream()
+	        		.map(name -> name.split(" ")[0])
+	        		.collect(Collectors.toList());
+	        		
+	       System.out.println("Extract first names from a list of full names"+firstNames);	
+	       
+	       
+	       //Given a list of integers, find out all the numbers starting with 1 using Stream functions?
+	       
+	       List<Integer> myList = Arrays.asList(10,15,8,49,25,98,32);
+	       myList.stream()
+	       .map(s -> s + "") // Convert integer to String
+	       .filter(s -> s.startsWith("1"))
+	       .forEach(System.out::println);
+	       
+	       
+	       //Given the list of integers, find the first element of the list using Stream functions?
+	       
+	       List<Integer> myList1 = Arrays.asList(10,15,8,49,25,98,98,32,15);
+	       myList1.stream()
+	       .findFirst()
+	       .ifPresent(System.out::println);
+	       
+	       
+        //Given a String, find the  non-repeated character in it using Stream functions?
+	       
+	       String input = "vilas savaji jadhav";
+	      
+	      List<Character> d= input.chars()
+	    		  .mapToObj(c -> (char) c)
+	       .filter(ch -> input.indexOf(ch) == input.lastIndexOf(ch))
+	       .collect(Collectors.toList());
+	      
+	      System.out.println("find the first non-repeated character in it using Stream functions"+d);
+	       
+	       //Given a String, find the first non-repeated character in it using Stream functions?
+	       
+	       String input1 = "vilas savaji jadhav";
+	      
+	      char d1= input.chars().mapToObj(c -> (char) c)
+	       .filter(ch -> input.indexOf(ch) == input.lastIndexOf(ch))
+	       .findFirst().orElse(null);
+	      
+	      System.out.println("find the first non-repeated character in it using Stream functions"+d1);
+	       
+	      
+	     // Java 8 program to perform cube on list elements and filter numbers greater than 50.
+	      
+	      List<Integer> integerList = Arrays.asList(4,5,6,7,1,2,3);
+	      integerList.stream()
+	      .map(i -> i*i*i)
+	      .filter(i -> i>50)
+	      .forEach(System.out::println);
 	}
 	
 	 public static boolean validateName(String s)
