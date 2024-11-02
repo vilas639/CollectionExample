@@ -42,6 +42,26 @@ public class reverseArrayWithoutExtraMemory {
 		
 		Arrays.stream(a).forEach(t -> System.out.println(t));
 		
+		
+		//using recurssion
+		
+		reverseArray(a, 0, a.length - 1);
+		
 	}
+	
+	
+	private static void reverseArray(int[] a, int start, int end) {
+        if (start >= end) {
+            return;
+        }
+        
+        // Swap the elements at start and end
+        int temp = a[start];
+        a[start] = a[end];
+        a[end] = temp;
+        
+        // Recursive call to reverse the remaining elements
+        reverseArray(a, start + 1, end - 1);
+    }
 
 }
