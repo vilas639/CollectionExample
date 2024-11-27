@@ -1,6 +1,9 @@
 package com.ashokit.collectionall.introduction;
 
 import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.IntStream;
+
 
 public class ArrayListExample {
 	
@@ -44,6 +47,38 @@ public class ArrayListExample {
 		Employee e= new Employee();
 		System.out.println(e);
 		System.out.println(cl.size());
+
+
+		List<Integer>  a= new ArrayList<>();
+
+		for (int j = 0; j <10;  j++) {
+			a.add(j);
+		}
+
+		System.out.println(a);
+		a.remove(2);
+		System.out.println(a);
+
+		System.out.println(a.get(3));
+		a.add(a.get(2),34);
+		System.out.println(a);
+		a.remove(4);
+		System.out.println(a);
+		a.add(null);
+		System.out.println(a);
+
+
+		 //in java 8 add 1 to 10 in list
+//		List<Integer> a = new ArrayList<>();
+//		IntStream.range(0, 10).forEach(a::add); // Add elements 0 to 9
+//		System.out.println(a);
+
+
+
+
+
+
+
 	}
 
 }

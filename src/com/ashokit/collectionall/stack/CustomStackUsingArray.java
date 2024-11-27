@@ -1,4 +1,4 @@
-package com.ashokit.collectioall.stack;
+package com.ashokit.collectionall.stack;
 
 import java.util.Arrays;
 

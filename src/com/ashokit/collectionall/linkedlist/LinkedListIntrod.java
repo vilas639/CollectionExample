@@ -25,8 +25,8 @@ public class LinkedListIntrod {
 		  
 		 
 		System.out.println(cl);//[] //com.ashokit.linkedlist.CustomLinkedList@7878
-		
-		List<Integer> l= new LinkedList<>();
+
+		LinkedList l= new LinkedList<>();
 		l.add(10);
 		l.add(20);
 		l.add(30);
@@ -41,6 +41,24 @@ public class LinkedListIntrod {
 		//List = get remove - abstract
 		//AL -> get , remove -overridden -> common func is checking if the index is negrative
 		//or index is <array.length -  public validate()
+
+		l.add(4,76);
+		System.out.println(l);
+		l.set(4,78);
+		System.out.println(l);
+		l.remove(5);
+		System.out.println(l);
+		l.addFirst(23);
+		System.out.println(l);
+		l.addLast(78);
+		System.out.println(l);
+		l.removeFirst();
+		System.out.println(l);
+		l.removeLast();
+		System.out.println(l);
+
+
+
 	}
 
 }

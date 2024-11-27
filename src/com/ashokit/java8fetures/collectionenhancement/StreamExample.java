@@ -10,6 +10,7 @@ import java.util.Optional;
 import java.util.Set;
 import java.util.stream.Collector;
 import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
 public class StreamExample {
@@ -23,7 +24,10 @@ public class StreamExample {
 		l.add(50);
 		l.add(70);
 		l.add(90);
-		
+
+		//add data using range
+		IntStream.range(0,9).forEach(l::add);
+		System.out.println(l);
 		//store in data in datastructre
 		//linkelist , stack ,queue ,ArrayList
 		
@@ -44,9 +48,14 @@ public class StreamExample {
 				
 				emplist.add(e);
 			}
-			
-			
-			
+
+
+		//add 20 employeee in list and display
+		 List<Employee> emplist99=   IntStream.range(0,20)
+					.mapToObj(i -> new Employee(i,"vilas"+i,"3000"+i))
+					.collect(Collectors.toList());
+		emplist99.forEach(System.out::println);
+
 			
 //		 for (Employee employee : emplist) {
 //			 
