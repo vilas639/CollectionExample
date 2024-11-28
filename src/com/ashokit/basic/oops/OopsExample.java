@@ -6,8 +6,9 @@ public class OopsExample  extends  P {
     public static void main(String[] args) {
         /*
         piler of oops
-        encapsualtion   -  wrap the code and data so only so throw object we used security
+        encapsualtion   - used to combine our variables & methods as single entity / unit we used security
         inheritence   - all parent class method and proprty for reusabilty
+          sinle , multilevel, hieachui,  multiple
         polymorpism  - many form   - it uses flexibility for developer creat action
 
         method overloading  - same name but differnet parammert alway take care at compile time

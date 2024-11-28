@@ -487,6 +487,46 @@ public class StreamExample {
 				.map(i -> i*i*i)
 				.filter(i -> i>50)
 				.forEach(System.out::println);
+
+
+
+		//reverse string
+         String s="Hello";
+         char[] str=s.toCharArray();
+		//char[] str = {'H', 'e', 'l', 'l', 'o'};
+		for (int i = str.length - 1; i >= 0; i--) {
+			System.out.print(str[i]);
+		}
+
+		//reverse string using recussion
+
+		reverse(s);
+
+		//reverse String in java 8
+		//String s = "Hello";
+
+		String reversed = IntStream.range(0, s.length())
+				.mapToObj(i -> s.charAt(s.length() - 1 - i)) // Access characters in reverse
+				.collect(StringBuilder::new, StringBuilder::append, StringBuilder::append)
+				.toString();
+
+		System.out.println("Reversed String: " + reversed);
+
+
+
+
+	}
+
+
+	static void reverse(String str)
+	{
+		if ((str==null)||(str.length() <= 1))
+			System.out.println(str);
+		else
+		{
+			System.out.print(str.charAt(str.length()-1));
+			reverse(str.substring(0,str.length()-1));
+		}
 	}
 
 	public static boolean validateName(String s)
