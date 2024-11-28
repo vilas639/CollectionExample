@@ -7,6 +7,7 @@ public class HashSetInternals {
 	
 	static Object PRESENT= new Object();
 	static final int i=10;
+	
 	public static void main(String[] args) {	
 		
 		Set<String> s= new HashSet<>();

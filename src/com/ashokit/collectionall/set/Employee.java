@@ -1,4 +1,4 @@
-package com.ashokit.collectionall.introduction;
+package com.ashokit.collectionall.set;
 
 public class Employee implements Comparable<Employee>{
 	int empId;
@@ -70,9 +70,15 @@ public class Employee implements Comparable<Employee>{
 		//return 0;
 	}
 	
-	 public static int compare(Employee x, Employee y) {
-	        return (x.getEmpId() < y.getEmpId()) ? -1 : ((x.getEmpId() == y.getEmpId()) ? 0 : 1);
-	    }
+
+	 
+	public static int compare(Employee x, Employee y) {
+		return (x.getEmpId()< x.getEmpId()) ? -1 : (x.getEmpId()==x.getEmpId() ? 0 :1);
+		//return (x.getSalary()< x.getSalary()) ? -1 : (x.getSalary()==x.getSalary() ? 0 :1);
+		//return x.getEmpName().compareTo(y.getEmpName());
+	}
+	 
+	
 
 	
 }
