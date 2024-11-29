@@ -14,7 +14,10 @@ public class SynchronizeExample {
 		//Runnable l= () ->{ e.display1(e);};
 		
 		//Thread t= new Thread(l);
-		Thread t= new Thread(() -> {e.display1(e);e.display(e);System.out.println("bye");});
+		Thread t= new Thread(() -> {
+			e.display1(e);
+			e.display(e);
+			System.out.println("bye");});
 		
 		
 //		Thread t= new Thread(new Runnable() {
