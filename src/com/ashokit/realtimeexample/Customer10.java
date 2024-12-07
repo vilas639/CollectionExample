@@ -29,6 +29,9 @@ class Customer10 {
         this.balance = balance;
     }
 
+    public String getCustomerId() { return customerId; }
+    public String getCity() { return city; }
+
     @Override
     public String toString() {
         return "Customer10{" +
@@ -42,5 +45,7 @@ class Customer10 {
                 ", balance='" + balance + '\'' +
                 '}';
     }
+
+
 }
 
