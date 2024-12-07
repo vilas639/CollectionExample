@@ -14,7 +14,7 @@ public class CardInput {
 	1.  i/p : 0521 1500 7865 1476
 	    o/p : XXXX XXXX XXX 51476
 
-	2. i/p  : 0521 1500 7865 1476
+	2. i/p  : 0521 1500 7865 1476 ks
 
 	    o/p :  print cardnumber is a primary card or not
 
