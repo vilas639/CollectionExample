@@ -7,6 +7,25 @@ public class CardInput {
 
     public static void main(String[] args) {
 
+        /*
+        Today core java task:
+ =====================
+
+	1.  i/p : 0521 1500 7865 1476
+	    o/p : XXXX XXXX XXX 51476
+
+	2. i/p  : 0521 1500 7865 1476
+
+	    o/p :  print cardnumber is a primary card or not
+
+		Get the 12 and 13th digit from the given card number
+		either of 12th and 13th digits are 0 then it is not a primary card
+		else it is a primary card
+
+		If both 12th and 13th are zero then send like cardnumber is invalid
+
+
+         */
         //taking input from user
         //display the data in masking form
 

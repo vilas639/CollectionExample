@@ -45,6 +45,8 @@ public class StringExample {
 
         String s5= new String(j);
 
+        System.out.println(s5);
+
         //why is stirg is immutable
         //object is refer to multple refernce
         //if you change the object then pointing refernce also modifyed
