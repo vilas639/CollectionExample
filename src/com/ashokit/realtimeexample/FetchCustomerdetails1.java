@@ -95,6 +95,6 @@ public class FetchCustomerdetails1 {
         //Groups the customers by their city (getCity).
        // The key (String) is the city.
        // The value (List<Customer10>) is a list of customers belonging to that city.
-
+      //test2
     }
 }
