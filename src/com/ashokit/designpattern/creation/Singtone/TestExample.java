@@ -14,7 +14,10 @@ public class TestExample {
 	public static void main(String[] args) throws Exception {
 		// TODO Auto-generated method stub
 		
-		
+		SingtoneClassDemo s3= SingtoneClassDemo.getInstance();
+		SingtoneClassDemo s4= SingtoneClassDemo.getInstance();
+		System.out.println(s3.hashCode());
+		System.out.println(s4.hashCode());
 		
 		//Eager
 		SingtoneEager s11= SingtoneEager.getInstance();
