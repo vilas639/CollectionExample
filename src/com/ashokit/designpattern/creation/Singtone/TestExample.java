@@ -56,7 +56,10 @@ public class TestExample {
 //		SingletonDesignPattren s4=(SingletonDesignPattren)t.newInstance();
 //		System.out.println(s4.hashCode());
 		
+		
 		//cloning the design pattern
+		//shallow copy
+		//deep copy 
 		SingletonDesignPattren s5= (SingletonDesignPattren)s2.clone();
 		System.out.println(s5.hashCode());
 		
