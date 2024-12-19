@@ -1,4 +1,4 @@
-package com.ashokit.designpattern;
+package com.ashokit.designpattern.creation.Singtone;
 
 public class Thread1 extends Thread {
 
