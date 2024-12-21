@@ -33,6 +33,9 @@ public class ThreadExample extends Thread {
              
             semaphore - acees the resource using acquried and release
             
+            demon thread- low priorty thread run in backgroudn gc also one demon thread
+            
+            
 
 	 	  */
 		ThreadExample t1= new ThreadExample();

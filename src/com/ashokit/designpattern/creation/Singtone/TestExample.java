@@ -1,4 +1,4 @@
-package com.ashokit.designpattern;
+package com.ashokit.designpattern.creation.Singtone;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -13,6 +13,18 @@ public class TestExample {
 
 	public static void main(String[] args) throws Exception {
 		// TODO Auto-generated method stub
+		
+		SingtoneClassDemo s3= SingtoneClassDemo.getInstance();
+		SingtoneClassDemo s4= SingtoneClassDemo.getInstance();
+		System.out.println(s3.hashCode());
+		System.out.println(s4.hashCode());
+		
+		//Eager
+		SingtoneEager s11= SingtoneEager.getInstance();
+		SingtoneEager s12= SingtoneEager.getInstance();
+		
+		System.out.println(s11.hashCode());
+		System.out.println(s12.hashCode());
 		
 		SingletonDesignPattren s1= SingletonDesignPattren.getInstance();
 		SingletonDesignPattren s2= SingletonDesignPattren.getInstance();
@@ -38,6 +50,8 @@ public class TestExample {
 //		System.out.println(s4.name);
 //		System.out.println(s4.hashCode());
 		
+		//solution overirde the readResolver()
+		
 		//Reflect ion have private classes
 		
 //		Constructor<SingletonDesignPattren> t=SingletonDesignPattren.class.getDeclaredConstructor();
@@ -45,7 +59,10 @@ public class TestExample {
 //		SingletonDesignPattren s4=(SingletonDesignPattren)t.newInstance();
 //		System.out.println(s4.hashCode());
 		
+		
 		//cloning the design pattern
+		//shallow copy
+		//deep copy 
 		SingletonDesignPattren s5= (SingletonDesignPattren)s2.clone();
 		System.out.println(s5.hashCode());
 		
