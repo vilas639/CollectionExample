@@ -1,17 +1,19 @@
-package com.ashokit.designpattern;
+package com.ashokit.designpattern.creation.Singtone;
 
 import java.io.Serializable;
 
 public class SingletonDesignPattren implements Cloneable {
 	
-	//static SingletonDesignPattren s = new SingletonDesignPattren(); //egar intilization
+
 	
 	 String name="vilas";
 	//lazy intilization
 	static SingletonDesignPattren s =null;
+	
 	private SingletonDesignPattren() throws Exception {
 		// TODO Auto-generated constructor stub
 		
+		//prevent the refelction
 		if(s!=null)
 		{
 			throw new Exception();
@@ -19,16 +21,25 @@ public class SingletonDesignPattren implements Cloneable {
 	}
 	
 	
-	
-	synchronized static  SingletonDesignPattren getInstance() throws Exception
+	//multiple thread prevent using synchronized keyword
+	 static  SingletonDesignPattren getInstance() throws Exception
 	{
-		if(s==null)
-		{
-			s= new SingletonDesignPattren();
-		}
+		 System.out.println("Hi");
+		 System.out.println("Hi1");
+		
+		 if(s==null)//Double checking locking
+		 {
+				synchronized (SingletonDesignPattren.class) {
+					if(s==null)
+						s= new SingletonDesignPattren();
+					
+									}
+			 
+		 }
 		return s;
 	}
 	
+	//prevetn from serilizable
 	Object readResolver()
 	{
 		return s;
@@ -43,12 +54,16 @@ public class SingletonDesignPattren implements Cloneable {
 
 }
 
-//memory will reuse 
-//1 make a private constructor
+//Advantages of Singtone is memory will reuse 
+//1 make a private constructor that will not allow create a object
 //create   a object of class
 //create instanc method
 
-//eggae intilization when class 
+//eagger intilization when class 
+/*
+ * 1. static varaible load at class loading 
+ */
+
 //lazy initilization
 //classloader
 //first check class code check
@@ -72,12 +87,8 @@ public class SingletonDesignPattren implements Cloneable {
 //1 .database connection
 //2. reading data from proprty file
 //3.multimodule  - give the classname 
-//4.logger .getintacnce()
+//4.logger .getIntance()
 
-
-//breke the singtone pattern
-//Refelction
-//serilization
-//multithreading
-//cloaning
-
+//in java which class is singltone class
+//ans : Runtime
+//@Controller, @RestController, @Repository, or @Service are singletons by default. 
