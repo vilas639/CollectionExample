@@ -48,7 +48,7 @@ public class CollectionEnhancment {
 		
 		for(int i=0;i<20;i++) {
 			
-			Employee e = new Employee(i,"vilas"+i,"2000"+i);
+			Employee e = new Employee(i,"vilas"+i,2000d);
 			
 			emplist.add(e);
 		}
