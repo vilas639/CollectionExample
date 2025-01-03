@@ -3,6 +3,7 @@ package com.ashokit.java8fetures.collectionenhancement;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.List;
@@ -45,7 +46,7 @@ public class StreamExample {
 
 		for(int i=0;i<20;i++) {
 
-			Employee e = new Employee(i,"vilas"+i,"2000"+i);
+			Employee e = new Employee(i,"vilas"+i,2000d);
 
 			emplist.add(e);
 		}
@@ -53,7 +54,7 @@ public class StreamExample {
 
 		//add 20 employeee in list and display
 		List<Employee> emplist99=   IntStream.range(0,20)
-				.mapToObj(i -> new Employee(i,"vilas"+i,"3000"+i))
+				.mapToObj(i -> new Employee(i,"vilas"+i,3000d))
 				.collect(Collectors.toList());
 		emplist99.forEach(System.out::println);
 
@@ -513,7 +514,8 @@ public class StreamExample {
 		System.out.println("Reversed String: " + reversed);
 
 
-
+		
+		 
 
 	}
 
@@ -551,5 +553,54 @@ public class StreamExample {
 
 
 	}
+	
+	
+	  // i. Get the list of employee details who belong to Hyderabad
+    public List<Employee> getEmpListByHydCity(List<Employee> empList) {
+        return empList.stream()
+                .filter(emp -> "Hyderabad".equalsIgnoreCase(emp.getCity()))
+                .collect(Collectors.toList());
+    }
+
+    // ii. Get list of employee details count on each city-wise
+    public Map<String, Long> getEmpCountByCity(List<Employee> empList) {
+        return empList.stream()
+                .collect(Collectors.groupingBy(Employee::getCity, Collectors.counting()));
+    }
+
+    // iii. Get the max employee salary on each city or overall in the company
+    public Map<String, Optional<Employee>> getMaxSalaryByCity(List<Employee> empList) {
+        return empList.stream()
+                .collect(Collectors.groupingBy(Employee::getCity,
+                        Collectors.maxBy(Comparator.comparingDouble(Employee::getSalary))));
+    }
+
+    public Optional<Employee> getMaxSalaryOverall(List<Employee> empList) {
+        return empList.stream()
+                .max(Comparator.comparingDouble(Employee::getSalary));
+    }
+
+    // iv. Remove duplicate employee details in the list
+    public List<Employee> removeDuplicateEmployees(List<Employee> empList) {
+        return empList.stream()
+                .distinct()
+                .collect(Collectors.toList());
+    }
+
+    // v. Sort the employee details based on the given input
+    public List<Employee> sortEmployees(List<Employee> empList, String sortBy) {
+        return empList.stream()
+                .sorted((emp1, emp2) -> {
+                    if ("dob".equalsIgnoreCase(sortBy)) {
+                        return emp1.getDob().compareTo(emp2.getDob());
+                    } else if ("salary".equalsIgnoreCase(sortBy)) {
+                        return Double.compare(emp1.getSalary(), emp2.getSalary());
+                    }
+                    return 0;
+                })
+                .collect(Collectors.toList());
+    }
+
+
 
 }
