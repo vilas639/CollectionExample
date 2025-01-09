@@ -53,3 +53,207 @@ locking
 
 
 
+
+implict synchronized
+
+synchronized drawback
+fairness
+blocking
+intrubilty 
+Read/write locking
+
+
+explict lock  (manual)
+
+lock 
+
+trylock
+
+private final Lock lock =new ReentrantLock();
+
+if(lock.trylock(1000,TimeUnit.MILLISECONDS);
+
+2 thread try two acquried resource if particular time it wait and if not then it will tarminated
+
+in finally lock.unlock() will release the lock
+
+in fally block make 
+thread.cureenthrread.intrupplted()
+
+
+Read Write Lock Example
+Read Lock will acquired allow read to all thread
+Write Lock will acquired one by one each thread
+
+
+Deadlock Ocuurance
+1. mutual exclution - onec thread alow at one time 
+2. hold and wait - thread is holding one resource and waiting to acquired other resourc for other thrad
+3. circult chain - waiting for each other 
+
+thread communincation
+wait 
+notify 
+notifyall
+
+
+
+threadsafety
+
+lambda expressin 
+
+
+threadpool
+why ?
+1. Resource Managment
+2. Resource Time
+3. Control Over Thread Time
+
+Executors Threads
+by manual thread creation issue
+1. Manual thread managment
+2. Resource Managment
+3. scalabilty
+4. Thread Reuse
+5. Error Handing
+
+
+ExecutorService excutor = Executors.newFixedThreadPool(3);
+
+exutor.submit()
+excutor.shutdown();
+excutor.awaitTermination(100, TimeUnit.SECONDS);
+
+
+Future<?> future= exutor.submit();
+future.get();
+if(future.isDone()){
+  sysout("Task is Done");
+}
+
+runnable vs callable 
+
+if you want to return then use callable statement
+not retun use runnable
+
+run run callable on call
+
+required throws manually bydefault throws intruppted exception
+
+invokeAll() -- invoke all collections of callable method
+
+sheduleExcutorService
+
+ScheduledExecutorService sheduler= Executors.newScheduledThreadPool(1);
+
+sheduler.schedule("",5,TimeUnit.Seconds);
+
+sheduler.scheduleAtFixed("",5,5,TimeUnit.Seconds);  //intial dealy 5 sec then run every 5 sec
+
+sheduler.scheduleWithFixedDelay("",5,5,TimeUnit.Seconds); // intial delay 5sec and wait for 5 sec
+
+
+ExecutorService excutor = Executors.newChaedThreadPool(3);
+
+
+CountDownLatch
+
+CountDownLatch l = new CountDownLatch(3);
+
+latch.await(5,TImUnit.Seconds);
+
+latch.countDown();
+
+once done you can not used 
+alternate is cyclicbarrier    -- all system started 
+ barrier.reset()
+ barrier.getNumberofwaiting()
+ 
+ 
+computableFuture
+asynchrous progrraming 
+
+CompletableFuture<String> c=	CompletableFuture.supplyAsync(() -> {
+			System.out.println("Welcome");
+			
+			try
+			{
+				Thread.sleep(5000);
+			}
+			catch(Exception e)
+			{
+				
+			}
+			return "ok";
+		});
+		
+		
+		CompletableFuture<String> c1=	CompletableFuture.supplyAsync(() -> {
+			System.out.println("Welcome1");
+			
+			try
+			{
+				Thread.sleep(5000);
+			}
+			catch(Exception e)
+			{
+				
+			}
+			return "ok1";
+		});
+		
+		
+		String s=null;
+		
+		try
+		{
+			s=c.get();
+			System.out.println(s);
+		}
+		catch(Exception e)
+		{
+			e.printStackTrace();
+		}
+
+		
+String s1=null;
+		
+		try
+		{
+			s1=c1.get();
+			System.out.println(s1);
+		}
+		catch(Exception e)
+		{
+			e.printStackTrace();
+		}
+		
+		CompletableFuture<Void> c2=CompletableFuture.allOf(c,c1);
+		
+		c2.join();
+		
+		System.out.println("Main Method is done");
+		
+
+	}
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
