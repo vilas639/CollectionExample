@@ -1,0 +1,55 @@
+Multithreading 
+process - 
+
+Thread
+independent path of exceution within a same program
+
+Multithreading 
+multiple thread excute in single process concurrently
+
+java.lang package
+
+Main thread alway responsible to excute the thread
+
+1. extending thread
+
+2. implementing runnable -- does return 
+
+3. implementing callable. - callable return future object  using call method
+
+thread vs runnable. 40 3:55:40
+
+methods()
+
+start().  --  thread start
+run().  --- inside method run 
+sleep(). -- wait for particular sec 1000 #1sec
+join().  --  wait to complet thread thaen man thread start
+
+
+preiorty
+min. 1
+max   10
+noraml. 5
+
+
+intruppted  (). -- running thread to stop 
+yield () - wait for current thread and give chance to another thread()
+
+
+setdemon. - ites demon thread works in backgroud if main thread done it will treminate other thread
+
+synchronized - is appky for method and block one time only thread allow
+
+locking 
+  - intrinsic. - by snchronized we can lok the object
+  - explicit. - you can take manual lock and unlock to controll the object
+
+  120
+
+
+
+
+
+
+
