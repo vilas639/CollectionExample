@@ -81,5 +81,26 @@ public class Main {
         Collections.sort(employees, new SalaryComparator());
         System.out.println("\nSorted by Salary (Comparator):");
         employees.forEach(System.out::println);
+
+
+        List<Employee> employees = new ArrayList<>();
+        employees.add(new Employee(3, "Alice", 55000));
+        employees.add(new Employee(1, "Bob", 75000));
+        employees.add(new Employee(2, "Charlie", 50000));
+
+        // Ascending Order by salary
+        employees.sort((e1, e2) -> (e1.getSalary() > e2.getSalary()) ? 1 : 
+                                    (e1.getSalary() == e2.getSalary()) ? 0 : -1);
+
+        System.out.println("Ascending Order by Salary:");
+        employees.forEach(System.out::println);
+
+        // Descending Order by salary
+        employees.sort((e1, e2) -> (e1.getSalary() > e2.getSalary()) ? -1 : 
+                                    (e1.getSalary() == e2.getSalary()) ? 0 : 1);
+
+        System.out.println("\nDescending Order by Salary:");
+        employees.forEach(System.out::println);
+ 
     }
 }
