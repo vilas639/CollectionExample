@@ -1,0 +1,565 @@
+Arraylist
+  Arrays.asList("A","B");
+  duplicate allow , order is maintain , perfomance for seletion , not threadsafe , intial 10,sequantial  ,0(1) 
+comparator
+Linklist
+   duplicate alloe , order is maintain , permorming insertion and deletation , not threadsafe
+LinkedList<Student> lst= new LinkedList<Student> (); 
+   
+   add
+   get
+   addfirst
+   getFirst
+   removeif
+
+
+Vectort
+   dynamic size , synchronized , intiali 10 ,sequantial , 0(1)
+ Vector<Integer> v= new Vector<>();
+   add
+   
+stack
+   LIFO
+Stack<Interger> stack = new Stack<>();   
+   push //add
+   pop  //remove elment   
+   peek // check last elemet
+   
+   stack can implemt usingg linklist
+   stack can implet using arraylisit
+   
+ 
+copyonwriteArraylist
+  when list modify then create a new copy and add
+  read opertion is fast
+  CopyonWriteArrayList<Integer> copy= new CopyonWriteArrayList<>(); 
+  
+  
+ Map  interface
+   key value pair,key is not duplicat but value, 
+    order - insertion Likedhashmap
+            natuarl order   TreeMap
+            no Order      HashMap			
+  
+  HashMap
+  16 size,one null allow, key is unique, order is not maintain , not threadsafe ,0(1) basic for get and put
+  HashMap<Integer, String> hashmap = new HashMap<>();
+  hshmap.put
+  hshmap.get(3)
+  hashmap.containkey(3)
+  hashmap.ContainValue("shubham");
+  
+  //retuve map
+  Set<Integer> set=hashmap.keySet()
+  
+  for(int i: set)
+  {
+     sop(set.get(i));
+  }
+  
+  //retrive maop
+  Set<Map.Entry<Integer,String>> entrys = hashmap.entrySet();
+  
+  for(Map.Entry<Integer,String> ent :  entrys)
+  {
+  
+  sop(ent.getKey()+ "" + ent.getValue());
+  }
+  
+  internal hashmap working 
+  default 16 devide remain called as index
+  hashcode - index - euqals -replace
+  equal 
+  hashcode
+  
+  
+  Linkehashmap
+  order maintain
+   Linkehashmap<Integer, String> hashmap = new Linkehashmap<>();
+  
+  LRU -least recent uses
+  
+  Garbasge collection
+  object store in heap memory
+  
+  weakedHashMap
+  example cache 
+  WeakRefernce<Student> studenrefernce = new WeakRefernce<>(new Student(1,"sabv")
+  
+  studenrefernce.get();
+  
+  IdentiyHashMap
+  Linkehashmap<Integer, String> hashmap = new IdentiyHashMap<>();
+  
+  comparable vs compartoe
+  natual  vs custome
+  compareTo()  compare(o1, o2)
+  
+  (o1.getKey() < o2.getKey()) ? -1 : ((o1.getKey() == o2.getKey()) ? 0 : 1);
+  
+   conditon? -1: conditon  ? 0:1
+   
+   SortedMap
+   order by sorted order 
+   tremap is red black treww - balance binary tree
+    SortedMap<String, Interger> sortedMap = new TreeMap<>();
+	
+	NavigableMap
+	find the closed matching key or retreive map in reverse order
+	
+	HashTable
+	threadsafe , no null key and value
+	HashTable<String, Interger> hashtable = new HashTable<>();
+	//replace concuurenthashmap
+	slower than hashmap
+	
+	ConcurrentHashMap
+	ConcurrentHashMap<String, Interger> concuurenthashmap = new ConcurrentHashMap<>();
+	
+	conncurrentSkipListMap
+	
+	EnumMap
+	//array of size same as enum
+	//[,,,,,]
+	//no hashing
+	//ordanary/index is used
+	//faster than hashmap
+	//memory effiecncy
+	
+	
+	Map<Day ,String> map = new EnumMap<>(Day.class)
+	map.put(Day.Tuesday, "Gym");
+	map.put(Day.Firday,"Walk");
+	
+	String s= map.get(Day.Tuesday);
+	System.out.println(s);
+	
+	enum Day {
+	  {Monday, Tuesaday,Firday}
+	}
+	
+	
+	ImmuatableMap 
+	Map can not be modifyed
+	Map<String ,Integer> map1 = new HashMap<>();
+	
+	Map<String ,Integer> map2 =Collections.unmodifiableMap(map1);
+	
+	//allow only 10 entry 
+    Map<String ,Integer> map3 =Map.of("shubham",98,"Ram",97);
+	
+	//allow many entry
+	 Map<String ,Integer> map4 = Map.ofEntries(Map.entry("shubahm",98),Map.entry("Ram",97);
+	
+	
+	Set 
+	duplication element not allow,not threadsafe
+	faster operation
+	Map - hashmap, LinkedHashMap , TreeMap , EnumMap
+	Set  - HashSet , LinkedHashSet , TreeSet , EnumSet
+	        unoder    order         sorder      
+	Set<Interger> set = new HashSet<>();
+	set.add(20);
+	interan working similar to hashmap
+	
+	how to make syncronized   for threadsafety
+	Set<Interger> set1 =  Collections.synchronizedSet(set);
+	
+	for better threadsafety 
+	Set<Interger> set1= new ConcurrentSkipListSet<>();
+	
+	//unmodifal set
+	//allow many entry
+    Set<Integer> set2 =Set.of("shubham","Ram");
+	
+	//allow many entry
+	 Set<Integer> map3 = Collections.unmodifiableSet(set2);
+	
+	
+	
+	CopyonWriteArraySet
+	threadsafe
+	copy on write Mechanisma
+	no duplicate element
+	Iterations Do Not Refelect Modification
+	
+	conncurrentSkipListSet
+	
+	
+	
+	Queue
+	FIFO
+	
+	Linklinst   
+	priorityQueue
+	//act as stack
+	LinkedList<Integer> list= new LinkedList<>();
+	list.addFirst(12);
+	list.addFirst(13)
+	list.removeFirst();
+	
+		//act as Queue
+	LinkedList<Integer> list= new LinkedList<>();
+	list.addLast(12);   //enqueue add in queue
+	list.addLast(13)
+	list.removeFirst();   //dequeue remove from list
+	list.getFirst();  //get top element
+	
+	
+	//act as Queue
+	Queue<Integer> list= new LinkedList<>();
+	list.add(12);   //enqueue add in queue // offer
+	list.add(13)
+	list.remove();   //dequeue remove from list  //poll
+	list.peek();  //get top element //elemet
+	
+	list.remove() //throw exception if empty
+	list.poll()//  return null
+	
+	list.element() //throw exception if empty
+	list.peek()//  return null
+	
+	
+	ArrayBlockingQueue
+	fixed capacity size
+	Queue<Integer> queue2= new ArrayBlockingQueue<>(2);
+	queue2.add(2);  //return true
+	queue2.offer(23); //return true
+	
+	queue2.offer(4) //return false
+	
+	PriorityQueue
+	order based on natual order 
+	custom order is using compartor
+	null not allow
+	
+	PriorityQueue<Interger> p1= new PriorityQueue<>();
+	p1.add(23);
+	p1.add(10);
+	p1.add(53);
+	p1.add(3);
+     
+     sysout(p1) //not sorted  23 10 53 3
+
+    while(!p1.isEmplty())
+		{
+       sysout(p1.poll); // 3 10 23 53
+		}	
+	
+   //internal working  
+   	
+	implemented as min-heap by default (for natual order)
+
+   Dequeue
+  //double ended queue 
+  //allow insertion and removal both side
+  //it used both queue and stack mechanism
+   
+   //insertion mehtod
+   addFirst(e) //add first 
+   addLast(e)  // add last at ended
+   OfferFisrt(e) // insert elemet at first if possible
+   OfferLast(e)   // inser element at last if possible
+
+   //remove method
+    removeFirst(e)  //retrive and remove first element
+    removeLast(e)   //retrive and removr last element
+    pollFirst()   //retuive and remove first elemnet and return null 
+    pollLast()	   //retrive and remove last elemetn and return null
+	
+	//exmine method
+	getFirst()   //retrive but does not remove the first lement
+	getLat()     //retrive but does not remove the last element
+	peekFirst()   ///retrive but does not remove the first lement if emplty return null
+	peekLast()   // retrive but does not remove the last element if empty return null
+	
+	//stack method 
+	push()//   equvalent addFirst(E)
+	pop() // remove the first element removeFirst();
+	
+	
+	Dequeue<Integer> deque1 = new ArrayDeque<>();   
+	//faster iteration low memmory not null allow
+	//circular head and tail
+		
+	deque1.addFirst(20);
+	deque1.addLast(35);
+	deque1.offerFirst(24);
+	deque1.offerLast(4);
+		// 24 20 35 4
+		deque1.getFirst() //24
+		deque1.getlast() //4
+		deque1.removeFirst() //24
+		deque1.pollLast() //4
+		// 20 35
+		
+		for(int num :deque1)
+		 {
+		   sysout(num);
+		 }
+		
+	
+Blocking Queue 
+   //thradsafe
+   //wait for queue to becone non emplty  //wait for space
+   //simplfy procedr and consumer
+   //standard queue   (imediate)
+      //empty  -- remve (no waitng )
+	  //full    --- add (no waiting)
+
+   //Blocking queue
+     //put  --- block if the queue is full until space become avaible
+     //take  -- block if the queue is emplty until elemt  become avaible
+     //offer  --  wait for space to become avaible upto specifed timeout	 
+
+
+   BlockingQueue<Integer> queue = new ArrayBlockingQueue<>(5);
+    //A bounded , blocking queue blocked by an array
+	
+	class Producer implements Runnable {
+    private BlockingQueue<Integer> queue;
+    private int value = 0;
+
+    public Producer(BlockingQueue<Integer> queue) {
+        this.queue = queue;
+    }
+
+    @Override
+    public void run() {
+        while (true) {
+            try {
+                System.out.println("Producer produced: " + value);
+                queue.put(value++);
+                Thread.sleep(1000);
+            } catch (Exception e) {
+                Thread.currentThread().interrupt();
+                System.out.println("Producer interrupted");
+            }
+        }
+    }
+}
+
+
+class Consumer implements Runnable {
+    private BlockingQueue<Integer> queue;
+
+    public Consumer(BlockingQueue<Integer> queue) {
+        this.queue = queue;
+    }
+
+    @Override
+    public void run() {
+        while (true) {
+            try {
+                Integer value = queue.take();
+                System.out.println("Consumer consumed: " + value);
+                Thread.sleep(2000);
+            } catch (Exception e) {
+                Thread.currentThread().interrupt();
+                System.out.println("Consumer interrupted");
+            }
+        }
+    }
+}
+
+public class BockingQueueDemo {
+    public static void main(String[] args) {
+        BlockingQueue<Integer> queue = new ArrayBlockingQueue<>(5);
+        // thread-safe queue
+        // wait for queue to become non-empty / wait for space
+        // simplify concurrency problems like producer-consumer
+        // standard queue --> immediately
+        // empty --> remove ( no waiting )
+        // full --> add ( no waiting )
+        // Blocking queue
+        // put -->  Blocks if the queue is full until space becomes available
+        // take --> Blocks if the queue is empty until an element becomes available
+        // offer --> Waits for space to become available, up to the specified timeout
+
+        // A bounded, blocking queue backed by circular array
+        // low memory overhead
+        // uses a single lock for both enqueue and dequeue operations
+        // more threads --> problem
+        Thread producer = new Thread(new Producer(queue));
+        Thread consumer = new Thread(new Consumer(queue));
+        producer.start();
+        consumer.start();
+		
+	
+  LinkedBlockingQueue
+
+  BlockingQueue<Integer> queue1 =  new LinkedBlockingQueue<>();
+        // optionally bounded backed by LinkedList
+        // Uses two separate locks for enqueue and dequeue operations
+        // Higher concurrency between producers and consumers  
+	
+	PriorityBlockingQueue
+	
+ BlockingQueue<String> queue2 = new PriorityBlockingQueue<>(11, Comparator.reverseOrder());
+        // unbounded  intial size 11
+        // Binary Heap as array and can grow dynamically
+        // Head is based on their natural ordering or a provided Comparator like priority queue
+        // put wont block
+        queue2.add("apple");
+        queue2.add("banana");
+        queue2.add("cherry");
+        System.out.println(queue2);
+		
+	SynchronousQueue	
+        BlockingQueue<Integer> queue3 =  new SynchronousQueue<>();
+        // each insert operation must wait for a corresponding remove operation by another thread and vice versa.
+        // it cannot store elements, capacity of at most 
+		
+	ConcurrentSkipListQueue
+     //best for accessing queue 
+	 
+		public class TaskSubmissionSystem {
+    private static ConcurrentLinkedQueue<String> taskQueue = new ConcurrentLinkedQueue<>();
+    public static void main(String[] args) {
+
+        Thread producer = new Thread(() -> {
+            while (true) {
+                try {
+                    taskQueue.add("Task " + System.currentTimeMillis());
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+        Thread consumer = new Thread(() -> {
+            while (true) {
+                try {
+                    String task = taskQueue.poll();
+                    System.out.println("Processing: " + task);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+        producer.start();
+        consumer.start();
+		
+		}
+		
+		ConcurrentLinkedDequeDemo
+		 // non-blocking, thread-safe double-ended queue
+        // CAS
+		
+		public class ConcurrentLinkedDequeDemo {
+    public static void main(String[] args) {
+       
+        ConcurrentLinkedDeque<String> deque = new ConcurrentLinkedDeque<>();
+        deque.add("Element1");
+        deque.addFirst("Element0");
+        deque.addLast("Element2");
+        System.out.println(deque);
+
+        String first = deque.removeFirst();
+        String last = deque.removeLast();
+    }
+}
+
+
+//Iterator
+public class IteratorDemo {
+    public static void main(String[] args) {
+        ArrayList<Integer> list = new ArrayList<>();
+        for (int i : list) {
+            System.out.println(i);
+        }
+        Iterator<Integer> iterator = list.iterator();
+        while (iterator.hasNext()) {
+            System.out.println(iterator.next());
+        }
+
+        List<Integer> numbers = new ArrayList<>();
+        numbers.add(1);
+        numbers.add(2);
+        numbers.add(3);
+        numbers.add(4);
+        numbers.add(5);
+//        for (Integer number : numbers) {
+//            if (number % 2 == 0) {
+//                numbers.remove(number);
+//            }
+//        }
+        Iterator<Integer> itr = numbers.iterator();
+        while (itr.hasNext()) {
+            Integer number = itr.next();
+            if (number % 2 == 0) {
+                itr.remove();
+            }
+        }
+        System.out.println(numbers);
+        ListIterator<Integer> listIterator = numbers.listIterator();
+        while (listIterator.hasNext()){
+            listIterator.next();
+//            listIterator.set();
+        }
+    }
+}
+		
+		
+		
+		
+		
+		
+		
+		
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  7219446694
+  
+  
+  
+  
+  
+   
+
+7             3:30 NCR Atleos	
+8th Jan 2025/ 4:30 PM  irissoftware.com
+10-01-2025    15:00 IST  Wissen Technology
