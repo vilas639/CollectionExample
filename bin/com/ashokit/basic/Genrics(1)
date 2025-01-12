@@ -1,0 +1,141 @@
+Genrics
+
+before java 5
+typecaste issue
+manual casting 
+no compile time checking
+
+in java5 inroduction
+
+
+ArrayList<String> listname= new ArrayList<String>();
+
+crete a genric class
+
+class Person<T> {
+	
+  private T pid;
+
+  //getter
+  //setter
+
+}
+
+Person<Interegr> p= new Person<>();
+p.setId(1);
+
+typsafety in compile
+
+class Car <K,V> {
+	
+   private K key;
+
+   private V value;
+
+    Car(K key,V value)
+    {
+    this.key = key;
+    this.value = value;
+    }
+
+    public K getKey()
+    {
+      retutn K;
+    }
+
+
+
+}
+
+Car<String, Integer> car = new Car<>("Brand","Tata Punch");
+car.getKey();
+
+
+create a interface
+
+public interface container<T> {
+	
+	void add (T item);
+
+	T get();
+}
+
+
+public class GenricContainer<T> implemts container<T> 
+{
+	private T item;
+
+
+	overide method
+
+
+
+}
+
+
+Bounted type prameter
+
+complusary declaration
+
+classs person <T extends Number > {
+	
+
+}
+
+
+Person<Interger> p = new person<>();
+
+
+genric constructor
+
+classs person  {
+	
+	public <T> persion(T iterm)
+	{
+
+	}
+
+}
+
+genric Method
+
+
+public <T> void printArray(T item)
+{
+	
+	for(T i: item)
+	{
+	sysout(i);
+	}
+}
+
+
+String[] stringArray= {"helow","world"};
+
+String[] intArray = {1,2,3,4}
+
+
+printArray(stringArray);
+
+printArray(intArray);
+
+enum
+
+enum Day {
+	sunday, monday
+}
+
+Day day = Day.Monday;
+
+
+
+Wildcard genrics
+
+geric exception - not support
+
+
+
+
+
+
+

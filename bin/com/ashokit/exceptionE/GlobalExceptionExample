@@ -1,0 +1,94 @@
+
+package com.example.exception;
+
+public class EmployeeNotFoundException extends RuntimeException {
+    public EmployeeNotFoundException(String message) {
+        super(message);
+    }
+}
+
+
+
+@ControllerAdvice
+public class GlobalExceptionHandler {
+
+    // Handle EmployeeNotFoundException
+    @ExceptionHandler(EmployeeNotFoundException.class)
+    public ResponseEntity<ErrorDetails> handleEmployeeNotFoundException(
+            EmployeeNotFoundException ex, WebRequest request) {
+
+        ErrorDetails errorDetails = new ErrorDetails(
+                LocalDateTime.now(),
+                ex.getMessage(),
+                request.getDescription(false)
+        );
+
+        return new ResponseEntity<>(errorDetails, HttpStatus.NOT_FOUND);
+    }
+
+    // Handle generic exceptions
+    @ExceptionHandler(Exception.class)
+    public ResponseEntity<ErrorDetails> handleGlobalException(
+            Exception ex, WebRequest request) {
+
+        ErrorDetails errorDetails = new ErrorDetails(
+                LocalDateTime.now(),
+                "Internal Server Error",
+                request.getDescription(false)
+        );
+
+        return new ResponseEntity<>(errorDetails, HttpStatus.INTERNAL_SERVER_ERROR);
+    }
+}
+
+
+package com.example.exception;
+
+import java.time.LocalDateTime;
+
+public class ErrorDetails {
+    private LocalDateTime timestamp;
+    private String message;
+    private String details;
+
+    // Constructor
+    public ErrorDetails(LocalDateTime timestamp, String message, String details) {
+        this.timestamp = timestamp;
+        this.message = message;
+        this.details = details;
+    }
+
+    // Getters and Setters
+    public LocalDateTime getTimestamp() {
+        return timestamp;
+    }
+
+    public void setTimestamp(LocalDateTime timestamp) {
+        this.timestamp = timestamp;
+    }
+
+    public String getMessage() {
+        return message;
+    }
+
+    public void setMessage(String message) {
+        this.message = message;
+    }
+
+    public String getDetails() {
+        return details;
+    }
+
+    public void setDetails(String details) {
+        this.details = details;
+    }
+}
+
+
+    @GetMapping("/employees/{id}")
+    public String getEmployeeById(@PathVariable int id) {
+        if (!employeeData.containsKey(id)) {
+            throw new EmployeeNotFoundException("Employee with ID " + id + " not found.");
+        }
+        return employeeData.get(id);
+    }

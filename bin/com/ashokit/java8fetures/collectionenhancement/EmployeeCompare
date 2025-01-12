@@ -1,0 +1,106 @@
+import java.util.*;
+
+// Employee class implementing Comparable
+class Employee implements Comparable<Employee> {
+    private int id;
+    private String name;
+    private double salary;
+
+    // Constructor
+    public Employee(int id, String name, double salary) {
+        this.id = id;
+        this.name = name;
+        this.salary = salary;
+    }
+
+    // Getters
+    public int getId() {
+        return id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public double getSalary() {
+        return salary;
+    }
+
+    // Override toString for display
+    @Override
+    public String toString() {
+        return "Employee{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", salary=" + salary +
+                '}';
+    }
+
+    // Natural ordering by id
+    @Override
+    public int compareTo(Employee other) {
+        return Integer.compare(this.id, other.id);
+    }
+}
+
+// Comparator for custom sorting by name
+class NameComparator implements Comparator<Employee> {
+    @Override
+    public int compare(Employee e1, Employee e2) {
+        return e1.getName().compareTo(e2.getName());
+    }
+}
+
+// Comparator for custom sorting by salary
+class SalaryComparator implements Comparator<Employee> {
+    @Override
+    public int compare(Employee e1, Employee e2) {
+        return Double.compare(e1.getSalary(), e2.getSalary()); // Ascending order
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        // List of employees
+        List<Employee> employees = new ArrayList<>();
+        employees.add(new Employee(3, "Alice", 55000));
+        employees.add(new Employee(1, "Bob", 75000));
+        employees.add(new Employee(2, "Charlie", 50000));
+
+        // Natural sorting by id
+        Collections.sort(employees);
+        System.out.println("Sorted by ID (Comparable):");
+        employees.forEach(System.out::println);
+
+        // Custom sorting by name
+        Collections.sort(employees, new NameComparator());
+        System.out.println("\nSorted by Name (Comparator):");
+        employees.forEach(System.out::println);
+
+        // Custom sorting by salary
+        Collections.sort(employees, new SalaryComparator());
+        System.out.println("\nSorted by Salary (Comparator):");
+        employees.forEach(System.out::println);
+
+
+        List<Employee> employees = new ArrayList<>();
+        employees.add(new Employee(3, "Alice", 55000));
+        employees.add(new Employee(1, "Bob", 75000));
+        employees.add(new Employee(2, "Charlie", 50000));
+
+        // Ascending Order by salary
+        employees.sort((e1, e2) -> (e1.getSalary() > e2.getSalary()) ? 1 : 
+                                    (e1.getSalary() == e2.getSalary()) ? 0 : -1);
+
+        System.out.println("Ascending Order by Salary:");
+        employees.forEach(System.out::println);
+
+        // Descending Order by salary
+        employees.sort((e1, e2) -> (e1.getSalary() > e2.getSalary()) ? -1 : 
+                                    (e1.getSalary() == e2.getSalary()) ? 0 : 1);
+
+        System.out.println("\nDescending Order by Salary:");
+        employees.forEach(System.out::println);
+ 
+    }
+}
