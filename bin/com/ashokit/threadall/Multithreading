@@ -156,16 +156,23 @@ sheduler.scheduleWithFixedDelay("",5,5,TimeUnit.Seconds); // intial delay 5sec a
 ExecutorService excutor = Executors.newChaedThreadPool(3);
 
 
+
 CountDownLatch
+CountDownLatch can be used to ensure that the system waits for all services to be initialized
+before proceeding
 
 CountDownLatch l = new CountDownLatch(3);
 
 latch.await(5,TImUnit.Seconds);
-
 latch.countDown();
 
-once done you can not used 
-alternate is cyclicbarrier    -- all system started 
+once done you can not used
+
+alternate is cyclicbarrier    -- all system started
+A CyclicBarrier supports an optional Runnable command that is run once per barrier point,
+after the last thread in the party arrives, but before any threads are released.
+This barrier action is useful for updating shared-state before any of the parties continue.
+
  barrier.reset()
  barrier.getNumberofwaiting()
  

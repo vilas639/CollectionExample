@@ -5,6 +5,11 @@ Explain how you’d design a thread-safe Singleton.
 Answer:
 
 Use Double-checked locking:
+
+How do you implement thread-safe lazy initialization?
+Answer:
+
+Use Double-Checked Locking:
  */
 public class DoubleCheckLockExample {
 

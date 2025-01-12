@@ -20,6 +20,8 @@ public class PriorityQueueExample {
         queue.add(new Task("High priority", 3));
         queue.add(new Task("Medium priority", 2));
 
+
+
         while (!queue.isEmpty()) {
             System.out.println(queue.poll());
         }
