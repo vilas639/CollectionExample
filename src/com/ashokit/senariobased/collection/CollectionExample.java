@@ -1,5 +1,5 @@
 package com.ashokit.senariobased.collection;
-package com.example.collection;
+//package com.example.collection;
 
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
@@ -234,6 +234,9 @@ Use Collections.unmodifiableList or List.of (Java 9+):
                 										pq.add(3);
                 										System.out.println(pq.poll());//12   //remove the elemet
                 										System.out.println(pq); //10 ,5, 3
+
+
+
     
     }
 }

@@ -10,7 +10,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 import java.util.Set;
-import java.util.stream.Collector;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
@@ -216,6 +215,10 @@ public class StreamExample {
 		emplist1.stream()
 				.sorted((t1,t2) -> (t1.getSalary() > t2.getSalary()) ? -1 : (t1.getSalary()==t2.getSalary()) ? 0:1)
 				.forEach((p) -> System.out.println(p));
+
+
+
+
 
 
 		//remove duplicate from list
@@ -514,8 +517,18 @@ public class StreamExample {
 		System.out.println("Reversed String: " + reversed);
 
 
-		
-		 
+
+		//12. How do you find the second largest number in a list?
+		List<Integer> list = Arrays.asList(3, 1, 4, 1, 5, 9);
+		list = list.stream()
+				.distinct()
+				.sorted(Comparator.reverseOrder())
+				.collect(Collectors.toList());
+		System.out.println(list.get(1)); // Second largest
+
+//Filter employees who earn more than 50,000 and belong to "IT".
+
+
 
 	}
 
@@ -575,6 +588,18 @@ public class StreamExample {
                         Collectors.maxBy(Comparator.comparingDouble(Employee::getSalary))));
     }
 
+	//From a list of employees, filter those with salaries greater than 50,000 and collect their names.
+	public void getSalaryByNamae(List<Employee> empList) {
+
+		List<String> employeeNames = empList.stream()
+				.filter(emp -> emp.getSalary() > 50000)
+				.map(Employee::getEmp_name)
+				.collect(Collectors.toList());
+	}
+
+
+
+
     public Optional<Employee> getMaxSalaryOverall(List<Employee> empList) {
         return empList.stream()
                 .max(Comparator.comparingDouble(Employee::getSalary));
@@ -586,6 +611,24 @@ public class StreamExample {
                 .distinct()
                 .collect(Collectors.toList());
     }
+
+	// iv. Remove duplicate employee details in the list
+	public List<Employee> earrnmoreandbelongIT(List<Employee> empList) {
+		return empList.stream()
+				.filter(emp -> emp.getSalary()>50000 && emp.getCity().equals("Hydrabad"))
+				.collect(Collectors.toList());
+	}
+
+	//Get the second-highest salary from a list.
+	public Optional<Double> secondhighestsalary(List<Employee> empList) {
+		return empList.stream()
+				.map(Employee :: getSalary)
+				.distinct()
+		         .sorted(Comparator.reverseOrder())
+				.skip(1)
+				.findFirst();
+	}
+
 
     // v. Sort the employee details based on the given input
     public List<Employee> sortEmployees(List<Employee> empList, String sortBy) {
