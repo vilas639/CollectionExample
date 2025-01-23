@@ -2,6 +2,7 @@ package com.ashokit.designpattern.creation.FactoryMethod;
 
 public class FactoryMethodExample {
 
+    //It provides an interface for creating objects in a superclass while allowing subclasses to specify the types of objects they create.
 	
 	     //create a interface
 		//implement 3 class implement method 
