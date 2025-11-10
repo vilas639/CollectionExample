@@ -1,4 +1,4 @@
-package com.example.collection;
+package com.ashokit.senariobased;
 
 import java.util.Arrays;
 import java.util.List;
