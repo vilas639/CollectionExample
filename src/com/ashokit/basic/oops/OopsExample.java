@@ -42,7 +42,7 @@ public class OopsExample  extends  P {
 
         //factory method
        // Runtime r = Runtime.getRuntime();
-
+       //checks
     }
 
     public void m1(String s)
