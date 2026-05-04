@@ -2,6 +2,7 @@ package com.ashokit.collectionall.coding;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.LinkedHashMap;
@@ -36,12 +37,42 @@ public class ReverseData {
         String[] strArr ={"abc","god","cab", "bca", "dog","cat"};  
       //  Output : {"abc","cab", "bca"}{"god","dog"}{"cat"}
 
-        chekMultipleAnagram(strArr);
+        //chekMultipleAnagram(strArr);
         
+        
+       // System.out.println(MostFrequentChar("SUCESS"));
+        
+        //Find the Maximum Occurring Word in a Given Sentence
+
+      //  System.out.println(maxWord("java java python java python p p p p p p p")); // Output: java
+
+      //  Check if a String Contains Only Digits
+        
+       // System.out.println(containsOnlyDigits("123456")); // true
+     //   System.out.println(containsOnlyDigits("123a56")); // false
+
+  //remove junk charactor
+      //  System.out.println(RemoveSpecialChars("J@@v@@a!2345")); 
+        
+        //reverse the number 
+      //  System.out.println(ReverseInteger(12345846)); 
+        
+        //number is palindrome or not
+      // palindromeNumber(121); 
+        
+        
+        //Largest & Smallest Numbers in an Array
+        int[] nums2 = {1, 2, 3, 5, 6, 7,100, 8,9,99, 10};
+        findlargestandsmallest(nums2);
+        
+        findsecondlargestandsmallest(nums2);
         
 	}
 	
 	
+	
+
+
 	//convert to chararray while (left<right ) store in temp and return new String
 	public  static String revserData(String data)
 	{
@@ -180,6 +211,159 @@ public class ReverseData {
 		
 		
 	}
+	
+	public static char MostFrequentChar(String s)
+	{   int[] temchar = new int[256];
+		int maxcount=-1;
+		char maxchar = 0;
+		
+		for(char c: s.toCharArray())
+		{
+			temchar[c]++;
+			  if (temchar[c]>maxcount)
+		    {
+		    	maxcount =temchar[c];
+		    	maxchar=c;
+		    }
+		    
+		    
+		   
+		}
+		
+		return maxchar;
+	}
+
+	
+	private static String maxWord(String string) {
+		// TODO Auto-generated method stub
+		String[] words=string.split(" ");
+		HashMap<String,Integer> maxword= new  HashMap<>();
+		int maxcount=0;
+		String maxdata="";
+		for(String s:words)
+		{
+			maxword.put(s, maxword.getOrDefault(s, 0)+1);
+			
+			if(maxword.get(s)>maxcount)
+			{
+				maxcount =maxword.get(s);
+				maxdata =s;
+			}
+		}
+		System.out.println(maxword);
+		
+		return maxdata;
+	}
+	
+	  public static boolean containsOnlyDigits(String str) {
+	        for (char c : str.toCharArray()) {
+	            if (c < '0' || c > '9') return false;
+	        }
+	        
+//	        Comparator.comparing(null);
+//	        Comparator.nullsFirst
+//	        comparator.nulssLast()
+	     
+	        return true;
+	    }
+
+	  public static String RemoveSpecialChars(String str)
+	  {
+		  str = str.replaceAll("[^a-zA-Z-0-9]", "");
+		  return str;
+	  }
+	  
+	
+	  
+	   public static Integer ReverseInteger(Integer num)
+	   {
+		   Integer reverse=0;
+		   
+		   while(num!=0)
+		   {
+			   reverse=reverse * 10 +num%10;
+			   num /=10;
+		   }
+		   
+		   return reverse;
+	   }
+	   
+	   public static void palindromeNumber(Integer num)
+	   {
+		   Integer reverse=0;
+		   Integer originnumber=num;
+		   
+		   while(num!=0)
+		   {
+			   reverse=reverse * 10 +num%10;
+			   num /=10;
+		   }
+		   
+		   if(reverse==originnumber)
+		   {
+			   System.out.println("yes its palindrome "+reverse);
+		   }
+		   else
+		   {
+			   System.out.println("No its palindrome ");
+		   }
+	   }
+	   
+	   public static void findlargestandsmallest(int[] num)
+	   {
+		   int largest=num[0];
+		   int smallest = num[0];
+		   
+		   for(int n:num)
+		   {
+			   if(n>largest)
+			   {
+				   largest=n;
+			   }
+			   if(n<smallest)
+			   {
+				   smallest=n;
+			   }
+		   }
+		   
+		   System.out.println("largest is "+largest);
+		   System.out.println("smallest is "+smallest);
+	   }
+	   
+	   public static void findsecondlargestandsmallest(int[] num)
+	   {
+		   int largest=Integer.MIN_VALUE;
+		   int smallest = Integer.MAX_VALUE;
+		   
+		   int secondlarget=Integer.MIN_VALUE;
+		   int secondsmallest = Integer.MAX_VALUE;
+		   for(int n:num)
+		   {
+			   if(n>largest)
+			   {
+				   secondlarget=largest;
+				   largest=n;
+			   }
+			   else if(n > secondlarget)
+			   {
+				   secondlarget=n;
+			   }
+			   
+			   if(n<smallest)
+			   {
+				   secondsmallest=smallest;
+				   smallest=n;
+			   }
+			   else if(n<secondsmallest)
+			   {
+				   secondsmallest=n;
+			   }
+		   }
+		   
+		   System.out.println("largest is "+secondlarget);
+		   System.out.println("smallest is "+secondsmallest);
+	   }
+
 
 
 	
