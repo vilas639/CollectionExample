@@ -1,5 +1,9 @@
 package com.ashokit.exceptionE;
 
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+
 public class ExceptionExample {
 
 	public static void main(String[] args) {
@@ -27,6 +31,30 @@ public class ExceptionExample {
            throw  - throw exception explicity
             thorws - thows the method level with multple exception 
 		 */
+		
+		checkconconcorentmodification();
+	}
+	
+	
+	public static void checkconconcorentmodification()
+	{
+		List<Integer> list = new ArrayList<>();
+		list.add(1);
+		list.add(2);
+//		for (Integer num : list) {
+//		    list.remove(num); // ConcurrentModificationException
+//		}
+		
+	Iterator<Integer>  i=	list.iterator();
+	
+	while(i.hasNext())
+	{
+		i.next();
+		i.remove();
+	}
+	
+	System.out.println(list);
+	
 	}
 
 }

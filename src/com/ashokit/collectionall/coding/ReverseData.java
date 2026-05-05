@@ -63,10 +63,19 @@ public class ReverseData {
         
         //Largest & Smallest Numbers in an Array
         int[] nums2 = {1, 2, 3, 5, 6, 7,100, 8,9,99, 10};
-        findlargestandsmallest(nums2);
+        //findlargestandsmallest(nums2);
         
-        findsecondlargestandsmallest(nums2);
+       // findsecondlargestandsmallest(nums2);
         
+        
+        //check the prime
+        //21 29
+       // checkprime(29);
+        
+        //check factorial normal
+        
+       findfactorialnormal(5);
+        System.out.println(findfactorialrecurretion(5));
 	}
 	
 	
@@ -104,7 +113,7 @@ public class ReverseData {
 		return new String(reverse);
 	}
 	
-	public static boolean checkpallindrome(String data)
+	public static boolean checkpalindrome(String data)
 	{
 		int left=0;
 		int right=data.length()-1;
@@ -362,6 +371,53 @@ public class ReverseData {
 		   
 		   System.out.println("largest is "+secondlarget);
 		   System.out.println("smallest is "+secondsmallest);
+	   }
+	   
+	   public static boolean checkprime(int num)
+	   {
+		   boolean isprime=true;
+		   for(int i=2;i<Math.sqrt(num);i++)
+		   {
+			   
+			   if(num%i==0)
+			   {
+				   isprime=false;
+				   break;
+
+			   }
+		   }
+		   
+
+	        if (isprime) {
+	            System.out.println(num + " is a prime number.");
+	        } else {
+	            System.out.println(num + " is not a prime number.");
+	        }
+
+		   
+		   return isprime; 
+	   }
+	   
+	   public static int findfactorialnormal(int num)
+	   {
+		   int factorial=1;
+		   for(int  i=1;i<=num;i++)
+		   {
+			   factorial *=i;
+		   }
+		   
+		   System.out.println("factorial "+ "is "+factorial);
+		   return factorial;
+	   }
+	   
+	   public static int findfactorialrecurretion(int num)
+	   {
+		   if (num == 0) {
+	            return 1;
+	        }
+
+		   return  num * findfactorialrecurretion(num -1);
+		   
 	   }
 
 
