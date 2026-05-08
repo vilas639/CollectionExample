@@ -3,6 +3,7 @@ package com.ashokit.java8fetures.collectionenhancement;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.List;
@@ -28,7 +29,7 @@ public class StreamExample {
 
 		//add data using range
 		IntStream.range(0,9).forEach(l::add);
-		System.out.println(l);
+		//System.out.println(l);
 		//store in data in datastructre
 		//linkelist , stack ,queue ,ArrayList
 
@@ -77,25 +78,50 @@ public class StreamExample {
 			emplist1.add(e);
 		}
 
+		
+		//name belong to vilas
+		
+		List<Employee1> emplist2=	emplist1.stream()
+		.filter(emp -> "vilas1".equalsIgnoreCase(emp.getEmp_name()))
+		.collect(Collectors.toList());
+		
+		System.out.println("belong to "+emplist2);
+		
+		Map<Double,Long> emplist33=emplist1.stream().
+		collect(Collectors.groupingBy(Employee1::getSalary,Collectors.counting()));
+		System.out.println("grouping by "+emplist33);
+		
+		//get max salary overall the city
+		Map<String,Optional<Employee1>> maxsallist=emplist1.stream()
+		.collect(Collectors.groupingBy(Employee1::getEmp_name,
+				Collectors.maxBy(Comparator.comparingDouble(Employee1::getSalary))));
+		System.out.println("max salary by "+maxsallist);
 
 		//writ a program get max salary of emplyee
 		Employee1 maxSalaryEmployee = emplist1.stream()
 				.max((t1, t2) -> Double.compare(t1.getSalary(), t2.getSalary()))
-				.orElse(null);  // Handles case when list might be empty
+				.orElse(null); 
 
 		if (maxSalaryEmployee != null) {
 			System.out.println("Employee with the max salary: " + maxSalaryEmployee.getEmp_name() + " - " + maxSalaryEmployee.getSalary());
 		}
 
-		Employee1 e2=	emplist1.stream()
-				.max((t1,t2) ->
-						(t1.getSalary()<t2.getSalary()) ? -1 : (t1.getSalary()==t1.getSalary()) ? 1: 0)
-				.orElse(null);
+
+		
+		Optional<Employee1> e2= emplist1.stream().
+		max((t1,t2) -> t1.getSalary()<t2.getSalary() ? -1 : t1.getSalary()==t2.getSalary() ? 1:0);
+		
 
 		System.out.println("max salary my"+e2.toString());
 
 
-
+        //remove duplicate employee
+		List<Employee1> dupllicatelist=emplist1.stream().
+		distinct().
+		collect(Collectors.toList());
+		
+		System.out.println("duplicate removed"+dupllicatelist.toString());
+		
 		//write a program get emp id in separete list
 		System.out.println("get emp id list"+emplist.stream().map((t) -> t.getEmpid()).collect(Collectors.toList()));
 
