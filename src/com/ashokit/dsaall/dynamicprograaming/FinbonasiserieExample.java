@@ -13,7 +13,7 @@ public class FinbonasiserieExample {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
-	     System.out.println("total sum"+fib(18));
+	     System.out.println("total sum"+fib(10));
 	     System.out.println("total sum"+dynamicfib(18));
 		System.out.println("number of process"+count);
 		

@@ -16,6 +16,8 @@ public class QueueExample {
 		depQueue.add(new Department(125));
 		depQueue.add(new Department(126));
 		
+	
+		
 
 		PriorityQueue<Department> depQueue1=new PriorityQueue<>(new Comparator<Department>() {
 		public int compare(Department o1, Department o2) {
