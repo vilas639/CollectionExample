@@ -1,6 +1,8 @@
 package codingblocks.map;
 
-import java.util.*;
+import java.util.HashMap;
+import java.util.LinkedHashMap;
+import java.util.TreeMap;
 
 public class Map_Demo {
 
