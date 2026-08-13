@@ -1,4 +1,4 @@
-package polymorphism;
+package scaller.lld.polymorphism;
 
 public class Student extends User {
     String batch;

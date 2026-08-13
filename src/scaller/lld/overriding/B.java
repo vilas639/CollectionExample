@@ -1,4 +1,4 @@
-package overriding;
+package scaller.lld.overriding;
 
 public class B extends A{
 
