@@ -1,4 +1,4 @@
-package singleton.impone;
+package scaller.lld.singleton.impone;
 
 import javax.xml.crypto.Data;
 

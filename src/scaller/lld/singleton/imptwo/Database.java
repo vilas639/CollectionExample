@@ -1,4 +1,4 @@
-package singleton.imptwo;
+package scaller.lld.singleton.imptwo;
 
 public class Database {
     private static Database instance = new Database(null, null );

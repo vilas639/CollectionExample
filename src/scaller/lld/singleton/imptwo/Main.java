@@ -1,4 +1,4 @@
-package singleton.imptwo;
+package scaller.lld.singleton.imptwo;
 
 import javax.xml.crypto.Data;
 
