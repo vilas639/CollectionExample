@@ -10,7 +10,7 @@ public class FactoryMethodExample {
 	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		
+		//ok
 		Factory1 factory = new Factory1();
 		
 		 Notification notification = factory.createNotification("SMS");
