@@ -1,4 +1,4 @@
-package interfaces;
+package scaller.lld.interfaces;
 
 public class Human extends Mammal implements Omnivore, PlantEater {
 

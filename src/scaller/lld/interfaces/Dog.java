@@ -1,4 +1,4 @@
-package interfaces;
+package scaller.lld.interfaces;
 
 public class Dog extends Mammal implements Herbivore {
 

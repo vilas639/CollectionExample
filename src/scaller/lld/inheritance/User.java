@@ -1,4 +1,4 @@
-package inheritance;
+package scaller.lld.inheritance;
 
 public class User {
     private String name;

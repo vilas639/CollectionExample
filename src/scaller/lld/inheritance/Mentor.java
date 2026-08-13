@@ -1,4 +1,4 @@
-package inheritance;
+package scaller.lld.inheritance;
 
 import java.util.List;
 

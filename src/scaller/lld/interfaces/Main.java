@@ -1,4 +1,4 @@
-package interfaces;
+package scaller.lld.interfaces;
 
 import java.util.List;
 

@@ -1,4 +1,4 @@
-package inheritance;
+package scaller.lld.inheritance;
 
 public class Instructor extends User {
     private String assignedBatch;

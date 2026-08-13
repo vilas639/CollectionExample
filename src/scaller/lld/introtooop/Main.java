@@ -1,4 +1,4 @@
-package introtooop;
+package scaller.lld.introtooop;
 
 public class Main {
 
