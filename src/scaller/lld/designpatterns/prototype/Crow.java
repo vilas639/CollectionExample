@@ -1,4 +1,4 @@
-package designpatterns.prototype;
+package scaller.lld.designpatterns.prototype;
 
 public class Crow extends Bird {
     private String sound = "Kaw";

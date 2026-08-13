@@ -1,4 +1,4 @@
-package designpatterns.builder.approachtwo;
+package scaller.lld.designpatterns.builder.approachtwo;
 
 import java.security.InvalidParameterException;
 

@@ -1,4 +1,4 @@
-package designpatterns.builder.approachone;
+package scaller.lld.designpatterns.builder.approachone;
 
 public class UserExamParameters {
     public int englishMarks = 10;

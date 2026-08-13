@@ -1,4 +1,4 @@
-package designpatterns.prototype;
+package scaller.lld.designpatterns.prototype;
 
 public class Sparrow extends Bird {
     private String legsSize;

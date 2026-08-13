@@ -1,6 +1,6 @@
-package designpatterns.prototype;
+package scaller.lld.designpatterns.prototype;
 
-import overriding.B;
+import scaller.lld.overriding.B;
 
 import java.util.ArrayList;
 import java.util.List;

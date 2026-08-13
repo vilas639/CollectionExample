@@ -1,6 +1,6 @@
-package designpatterns.prototype;
+package scaller.lld.designpatterns.prototype;
 
-import overriding.B;
+import scaller.lld.overriding.B;
 
 public class Bird implements Cloneable<Bird> {
     private String name;

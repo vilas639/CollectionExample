@@ -1,4 +1,4 @@
-package designpatterns.prototype;
+package scaller.lld.designpatterns.prototype;
 
 import java.util.HashMap;
 import java.util.Map;

@@ -1,6 +1,6 @@
-package designpatterns.builder.approachone;
+package scaller.lld.designpatterns.builder.approachone;
 
-import inheritance.User;
+import scaller.lld.inheritance.User;
 
 public class Client {
 
