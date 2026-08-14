@@ -1,4 +1,4 @@
-package designpatterns.behavioural.strategy.before;
+package scaller.lld.designpatterns.behavioural.strategy.before;
 
 public class GoogleMaps {
 

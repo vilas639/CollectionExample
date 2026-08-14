@@ -1,4 +1,4 @@
-package designpatterns.behavioural.observer;
+package scaller.lld.designpatterns.behavioural.observer;
 
 public class Order {
     private long orderId;

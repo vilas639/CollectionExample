@@ -1,4 +1,4 @@
-package designpatterns.behavioural.strategy.after2;
+package scaller.lld.designpatterns.behavioural.strategy.after2;
 
 public class WalkPathCalculationStrategy implements PathCalculationStrategy {
 

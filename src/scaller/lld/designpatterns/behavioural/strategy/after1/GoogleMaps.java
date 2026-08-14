@@ -1,4 +1,4 @@
-package designpatterns.behavioural.strategy.after1;
+package scaller.lld.designpatterns.behavioural.strategy.after1;
 
 public class GoogleMaps {
     private PathCalculationStrategyFactory pathCalculationStrategyFactory = new PathCalculationStrategyFactory();

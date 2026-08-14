@@ -1,4 +1,4 @@
-package designpatterns.behavioural.observer;
+package scaller.lld.designpatterns.behavioural.observer;
 
 import java.util.concurrent.Flow;
 
