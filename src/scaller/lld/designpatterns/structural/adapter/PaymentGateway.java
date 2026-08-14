@@ -1,4 +1,4 @@
-package designpatterns.structural.adapter;
+package scaller.lld.designpatterns.structural.adapter;
 
 // rp -> cc, dc, paytm
 // juspay -> mobikwik, airtel money, cc, dc -> 1000

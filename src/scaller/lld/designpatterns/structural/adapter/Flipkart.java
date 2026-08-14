@@ -1,4 +1,4 @@
-package designpatterns.structural.adapter;
+package scaller.lld.designpatterns.structural.adapter;
 
 import java.util.List;
 

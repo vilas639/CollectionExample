@@ -1,4 +1,4 @@
-package designpatterns.structural.adapter.razorpay;
+package scaller.lld.designpatterns.structural.adapter.razorpay;
 
 public class RazorpayGateway {
 

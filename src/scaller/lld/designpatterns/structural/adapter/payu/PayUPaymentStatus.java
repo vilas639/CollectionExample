@@ -1,4 +1,4 @@
-package designpatterns.structural.adapter.payu;
+package scaller.lld.designpatterns.structural.adapter.payu;
 
 public enum PayUPaymentStatus {
     SUCCESS,

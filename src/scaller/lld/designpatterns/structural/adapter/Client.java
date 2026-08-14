@@ -1,4 +1,4 @@
-package designpatterns.structural.adapter;
+package scaller.lld.designpatterns.structural.adapter;
 
 public class Client {
     public static void main(String[] args) {

@@ -1,6 +1,6 @@
-package designpatterns.structural.adapter;
+package scaller.lld.designpatterns.structural.adapter;
 
-import designpatterns.structural.adapter.razorpay.RazorpayGateway;
+import scaller.lld.designpatterns.structural.adapter.razorpay.RazorpayGateway;
 
 public class RazorpayPaymentGatewayAdapter
 implements PaymentGateway {
