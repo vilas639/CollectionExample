@@ -1,4 +1,4 @@
-package designpatterns.structural.flyweight.after;
+package scaller.lld.designpatterns.structural.flyweight.after;
 
 import java.util.HashMap;
 import java.util.Map;

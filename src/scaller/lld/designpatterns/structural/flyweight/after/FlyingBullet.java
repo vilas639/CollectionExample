@@ -1,4 +1,4 @@
-package designpatterns.structural.flyweight.after;
+package scaller.lld.designpatterns.structural.flyweight.after;
 
 public class FlyingBullet {
     private double x_coord;

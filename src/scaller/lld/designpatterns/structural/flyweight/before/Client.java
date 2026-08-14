@@ -1,4 +1,4 @@
-package designpatterns.structural.flyweight.before;
+package scaller.lld.designpatterns.structural.flyweight.before;
 
 import java.util.ArrayList;
 import java.util.List;

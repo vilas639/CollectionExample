@@ -1,4 +1,4 @@
-package designpatterns.structural.flyweight;
+package scaller.lld.designpatterns.structural.flyweight;
 
 public class Main {
 

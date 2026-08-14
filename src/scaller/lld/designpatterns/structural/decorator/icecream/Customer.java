@@ -1,4 +1,4 @@
-package designpatterns.structural.decorator.icecream;
+package scaller.lld.designpatterns.structural.decorator.icecream;
 
 public class Customer {
 

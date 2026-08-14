@@ -1,6 +1,6 @@
-package designpatterns.structural.flyweight.after;
+package scaller.lld.designpatterns.structural.flyweight.after;
 
-import overriding.B;
+import scaller.lld.overriding.B;
 
 import java.util.ArrayList;
 import java.util.List;
