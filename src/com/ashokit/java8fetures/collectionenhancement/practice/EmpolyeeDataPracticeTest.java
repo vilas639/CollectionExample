@@ -7,8 +7,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 import java.util.Set;
-
-
+import java.util.function.Predicate;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
@@ -38,12 +37,21 @@ public class EmpolyeeDataPracticeTest {
 	        emplist.add(e9);
 	        //get list of detail who belong to delhi
 
+	        
 	      List<Employee> emplistdelhi=emplist.stream()
 	      .filter(emp -> "Delhi".equalsIgnoreCase(emp.getCity()))
 	      .collect(Collectors.toList());
 	
 	      System.out.println(emplistdelhi);
 
+	      //find employee whose name start with A
+	      
+	      List<Employee> empliststart= emplist.stream()
+	      .filter(emp -> emp.getName().startsWith("A"))
+	      .collect(Collectors.toList());
+	      
+	      System.out.println("start with A"+empliststart);
+	      
 	        //get name of employee
 	        //map transform objexct into field
 //	      List<String> emplistdelhi=emplist.stream()
@@ -181,17 +189,23 @@ public class EmpolyeeDataPracticeTest {
 //	              .sum();
 	//
 //	      System.out.println(totalsum);
+	      
+	      //sum of all employee salary using reduce 
+//	      double totalsum = emplist.stream()
+//                  .map(Employee::getSalary)
+//                  .reduce(0.0, Double::sum);
+//	      System.out.println(totalsum);
 
 	        //total sum groupwise city
-//	      Map<String,Double> groupwisecity=   emplist.stream()
-//	      .collect(Collectors.groupingBy(
-//	              Employee::getCity,
-//	              Collectors.collectingAndThen(Collectors.toList(),
-//	                      m -> m.stream()
-//	                      .mapToDouble(Employee::getSalary)
-//	                      .sum()
-//	                      )));
-//	      System.out.println(groupwisecity);
+	      Map<String,Double> groupwisecity=   emplist.stream()
+	      .collect(Collectors.groupingBy(
+	              Employee::getCity,
+	              Collectors.collectingAndThen(Collectors.toList(),
+	                      m -> m.stream()
+	                      .mapToDouble(Employee::getSalary)
+	                      .sum()
+	                      )));
+	      System.out.println("total sum groupwisece city"+groupwisecity);
 
 	        //those age is 45 increase there salary by 10% and provide then list
 	        //peek for modification
@@ -235,7 +249,6 @@ public class EmpolyeeDataPracticeTest {
 //	              (e,n) -> e))
 //	      .values().stream()
 //	      .collect(Collectors.toList());
-	//
 //	      System.out.println(uniquerecord);
 
 	        //find the duplicate name
@@ -306,7 +319,46 @@ public class EmpolyeeDataPracticeTest {
 //	              System.out.println(SalrangeListNew);
 
 	        //remove duplicate employee
+	      
+	      //flatmap
+//	      List<List<String>> skills = null;
+//
+//List<String> result =skills.stream()
+//                .flatMap(List::stream)
+//                .collect(Collectors.toList());
+//
+//System.out.println(result);
+	      
+	      //partitioningBy
+//	      Map<Boolean, List<Employee>> result =
+//	    	        emplist.stream()
+//	    	                .collect(Collectors.partitioningBy(
+//	    	                        e -> e.getSalary() >= 50000
+//	    	                ));
+//
+//	      System.out.println("partitan by"+result);
+//
+//	    
+	 
+	      
+	      Predicate<Employee> isIT =
+	    	        e -> "Delhi".equalsIgnoreCase(e.getCity());
 
-	    }
+	    	Predicate<Employee> highSalary =
+	    	        e -> e.getSalary() > 40000;
+
+	    	Predicate<Employee> experienced =
+	    	        e -> e.getAge() > 32;
+
+	    	List<Employee> result =
+	    	        emplist.stream()
+	    	                .filter(isIT.and(highSalary).and(experienced))
+	    	                .collect(Collectors.toList());
+
+	    	 System.out.println("predict list by"+result);
+	
+
 
 	}
+
+}

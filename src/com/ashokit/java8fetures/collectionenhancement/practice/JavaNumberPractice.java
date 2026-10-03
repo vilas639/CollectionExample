@@ -114,6 +114,9 @@ public class JavaNumberPractice {
 //      .reduce(1, (a,b)  -> a*b);
 //
 //      System.out.println("factoial of   "+factint+" is "+fact);
+      
+      
+      
 
     }
 
