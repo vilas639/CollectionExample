@@ -13,6 +13,7 @@ public class Reversal_Algo {
 
 	}
 
+	//leet code: 189. Rotate Array
 	private static void Rotate(int[] arr, int k) {
 		// TODO Auto-generated method stub
 		int n = arr.length;
