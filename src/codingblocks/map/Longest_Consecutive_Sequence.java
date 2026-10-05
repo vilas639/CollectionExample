@@ -8,6 +8,7 @@ public class Longest_Consecutive_Sequence {
 		// TODO Auto-generated method stub
 		int[] arr = { 0, 3, 7, 2, 5, 8, 4, 6, 0, 1 };
 
+		System.out.println("print"+Consecutive_Sequence(arr));
 	}
 
 	public static int Consecutive_Sequence(int[] arr) {
