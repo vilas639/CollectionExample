@@ -357,6 +357,36 @@ public class EmpolyeeDataPracticeTest {
 
 	    	 System.out.println("predict list by"+result);
 	
+	    	 
+	    //	 You have a large list of users and orders. 
+	    //	 Find all orders belonging to each user efficiently. Avoid nested loops 
+
+//	    	 List<User> users = Arrays.asList(
+//	    			    new User(1, "Vilas"),
+//	    			    new User(2, "Rahul"),
+//	    			    new User(3, "Amit")
+//	    			);
+//
+//	    			List<Order> orders = Arrays.asList(
+//	    			    new Order(101, 1, 500),
+//	    			    new Order(102, 2, 700),
+//	    			    new Order(103, 1, 300),
+//	    			    new Order(104, 3, 900),
+//	    			    new Order(105, 1, 200)
+//	    			);
+//
+//	    			// Group orders by userId
+//	    			Map<Integer, List<Order>> ordersByUser =
+//	    			        orders.stream()
+//	    			              .collect(Collectors.groupingBy(Order::getUserId));
+//
+//	    			// Find orders for each user
+//	    			users.forEach(user -> {
+//	    			    List<Order> userOrders =
+//	    			            ordersByUser.getOrDefault(user.getId(), Collections.emptyList());
+//
+//	    			    System.out.println(user.getName() + " -> " + userOrders);
+//	    			});
 
 
 	}

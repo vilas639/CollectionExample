@@ -321,8 +321,59 @@ public class EmpolyeeDataPracticeTest2 {
    	                        }));
 
    	        System.out.println(reversed); // dlroWolleH
+   	        
+   	        
+   	        System.out.println("reverse number"+1234 +" "+reversenum(1234));
+   	        
+   	        //revese arry
+   	     //reversenumarray();
+   	        int[] arrrr={10,20,30,40,50,60,70};
+   	  rotateonly(arrrr,3);
 	    }
 	 
+	static int reversenum(int num)
+	 {
+		int reverse=0;
+		 while(num!=0)
+		 {
+			 reverse = reverse*10+num%10;
+			 num =num/10;
+		 }
+		 return reverse;
+	 }
+	//check palindrome 
+	//if reverse==num
+	 
+	//revese array
+	static void reversenumarray(int[] arr,int start, int end)
+	{
+		//int[] arr= {1,2,3,4,5,6};
+		//start end forloop swap
+		int last= arr.length-1;
+		
+		 while(start<last) {
+			
+				int tem=arr[start];
+				arr[start]= arr[last];
+				arr[last]=tem;
+				start++;
+				last--;
+		 }
+		
+		
+		 System.out.println("reverse array1"+Arrays.toString(arr));
+		
+	}
+	
+	static void rotateonly(int[] num,int pos)
+	{
+		int end=num.length;
+		int k=pos%end;
+		
+		reversenumarray(num,0,end-k-1);
+		reversenumarray(num,end-k,end-1);
+		reversenumarray(num,0,end-1);
+	}
 	
 
 	}
