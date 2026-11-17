@@ -116,8 +116,23 @@ public class JavaNumberPractice {
 //      System.out.println("factoial of   "+factint+" is "+fact);
       
       
+      System.out.println("reverse"+reversenum(1234));
+      
       
 
+    }
+    
+   static int reversenum(int num)
+    {
+    	int reverse =0;
+    	while(num!=0)
+    	{
+    		reverse= reverse*10+num%10;
+    		
+    		num = num/10;
+    		
+    	}
+    	return reverse;
     }
 
 }

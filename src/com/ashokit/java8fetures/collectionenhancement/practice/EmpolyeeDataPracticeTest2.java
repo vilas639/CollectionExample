@@ -188,6 +188,13 @@ public class EmpolyeeDataPracticeTest2 {
 //              Set<String> uniquename=emplist.stream()
 //              .map(m -> m.getName())
 //              .collect(Collectors.toSet());
+	       
+	       //find the unique name normal list
+//	       String[] name = {"vilas", "vikas", "vilas"};
+//	       List<String> uniqueNames = Arrays.stream(name)
+//	               .distinct()
+//	               .collect(Collectors.toList());
+//	       System.out.println(uniqueNames);
       
 	       	             //find unige record
 //             List<Employee> uniqerecords= emplist.stream()
@@ -201,7 +208,6 @@ public class EmpolyeeDataPracticeTest2 {
 //             System.out.println("uniqerecords"+uniqerecords);
               
 	       	              //find the duplicate name
-	       
 	       Set<String> uniquename=   emplist.stream()
 	       .collect(Collectors.groupingBy(Employee::getName,Collectors.counting()))
 	       .entrySet().stream()
@@ -325,8 +331,49 @@ public class EmpolyeeDataPracticeTest2 {
    	        
    	        System.out.println("reverse number"+1234 +" "+reversenum(1234));
    	        
+   	   //Remove duplicates from an unsorted list
+//   	     List<int[]> result = input.stream()
+//   	     .collect(Collectors.toMap(
+//   	         Arrays::toString,
+//   	         e -> e,
+//   	         (e, x) -> e,
+//   	         LinkedHashMap::new
+//   	     ))
+//   	     .values()
+//   	     .stream()
+//   	     .collect(Collectors.toList());
+//
+//   	 result.forEach(e -> System.out.println(Arrays.toString(e)));
+   	        
    	        //revese arry
    	     //reversenumarray();
+   	        
+   	   //  Remove Duplicates from Sorted Array
+   	  //int[] arr = {1, 1, 2, 2, 3};
+
+   	  //int[] result = Arrays.stream(arr)
+   	    //                   .distinct()
+   	     //                  .toArray();
+
+   	  //System.out.println(Arrays.toString(result));
+   	      
+   	 //common elements present in both lists.
+//   	     int[] arr1 = {1, 2, 3, 4, 5};
+//   	  int[] arr2 = {3, 4, 5, 6, 7};
+//
+//   	  Set<Integer> set = Arrays.stream(arr2)
+//   	          .mapToObj(Integer::valueOf)
+//   	          .collect(Collectors.toSet());
+//
+//   	  List<Integer> result = Arrays.stream(arr1)
+//   	          .filter(set::contains)
+//   	          .distinct()
+//   	          .mapToObj(Integer::valueOf)
+//   	          .collect(Collectors.toList());
+//
+//   	  System.out.println(result);
+   	  
+   	  
    	        int[] arrrr={10,20,30,40,50,60,70};
    	  rotateonly(arrrr,3);
 	    }
@@ -374,6 +421,8 @@ public class EmpolyeeDataPracticeTest2 {
 		reversenumarray(num,end-k,end-1);
 		reversenumarray(num,0,end-1);
 	}
+	
+	
 	
 
 	}
